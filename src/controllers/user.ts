@@ -31,7 +31,7 @@ export const getOtherUsers = async (loggedInId: number) => {
 };
 
 export const registerUser = async (name: string, password: string) => {
-  const hashedPassword = await hashPassword(password);
+  const hashedPassword = await hashPassword(password, password, password, password);
 
   const data = await pool.execute<ResultSetHeader>(
     "INSERT INTO users(name,password) VALUES(?,?)",
